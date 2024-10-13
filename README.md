@@ -76,6 +76,7 @@ In bash-like shells, you can set environment variables like this:
 ```bash
 export HD_PORT=9000
 export HD_PRODUCTION=1
+export HD_HOST=0.0.0.0
 python main.py
 ```
 
@@ -92,5 +93,22 @@ In non-bash-like shells, you can use setenv, which works like the export command
 ```bash
 setenv HD_PORT 9000
 setenv HD_PRODUCTION 1
+setenv HD_HOST 0.0.0.0
+python main.py
+```
+
+# Docker mode
+### docker start container
+```bash
+docker run --rm -it -p  9000:9000 -v /Users/mac/gitcode/ollama_basic_chat:/web 
+```
+
+### exec command from container
+```bash
+cd  /web
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+export HD_PORT=9000
+export HD_HOST=0.0.0.0
+export HD_PRODUCTION=1
 python main.py
 ```

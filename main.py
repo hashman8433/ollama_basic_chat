@@ -7,7 +7,7 @@ from ollama import Client
 """
     Set the location for where ollama is running, default is based on default install
 """
-ollama_url = 'http://localhost:11434'
+ollama_url = 'http://192.168.1.146:11434'
 
 # create an empty list to store all the models we have installed.
 model_list = []
