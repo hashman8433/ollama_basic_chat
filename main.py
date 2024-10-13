@@ -2,12 +2,15 @@ import sys
 import hyperdiv as hd
 import requests
 from ollama import Client
+import os
+
+
 
 
 """
     Set the location for where ollama is running, default is based on default install
 """
-ollama_url = 'http://192.168.1.146:11434'
+ollama_url = os.environ.get("OLLAMA_URL")
 
 # create an empty list to store all the models we have installed.
 model_list = []

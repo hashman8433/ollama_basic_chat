@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    container_name: ollama_basic_chat
+    image: registry.cn-hangzhou.aliyuncs.com/asdfasdfasdfqwe/ollama_basic_chat:v3.9.2
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - OLLAMA_URL=http://192.168.1.146:11434
+      - HD_HOST=0.0.0.0
+    ports:
+      - '9000:9000'
