@@ -112,3 +112,9 @@ export HD_HOST=0.0.0.0
 export HD_PRODUCTION=1
 python main.py
 ```
+
+# docker compose
+###  start container
+```bash
+docker-compose up -d 
+```
